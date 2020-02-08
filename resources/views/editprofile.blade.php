@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container ">
-<h1 class="text-center pb-5">Edit Your profile</h1>
+<h1 class="text-center pb-5">Uredite Vaš profil</h1>
 
 
 <form action="/p" enctype = "multipart/form-data" method="post">
@@ -12,7 +12,7 @@
                           
                           
                             
-                            <label for="description" class="col-md-4 col-form-label text-md-right">Description</label>
+                            <label for="description" class="col-md-4 col-form-label text-md-right">Opis</label>
 
                             <div class="col-md-6">
                                 <input id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') ?? Auth::user()->profile->description }}"  autocomplete="description" autofocus>
@@ -24,7 +24,7 @@
                                 @enderror
                                
                                 <div class="d-flex pt-5 pl-2 ">
-                                <label for="image" class="col-md-4 col-form-label text-md-right">Profile Image</label>
+                                <label for="image" class="col-md-4 col-form-label text-md-right">Profilna slika</label>
                                 <input type="file", class="form-control-file" id="image" name="image">
                                 @error('image')
                                     
@@ -32,7 +32,7 @@
                           
                                 @enderror
                                 </div>
-                                <div class="row pt-5 pl-3"><button class="btn btn-primary">Submit Changes</button></div>
+                                <div class="row pt-5 pl-3"><button class="btn btn-primary">Spremi promjene</button></div>
                             </div>
                            
                         </div>

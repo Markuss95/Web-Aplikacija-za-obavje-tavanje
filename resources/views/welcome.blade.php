@@ -133,12 +133,12 @@
                 <div>
                 <a href = "{{ route('register') }}">
                 <button type="button" class="btn btn-outline-primary">Registriraj se!</button>
-                </a>
+                <!-- </a>
                 </div>
                 <div>
                 <button type="button" class="btn btn-outline-primary about-us">O aplikaciji</button>
                 </div>
-                
+                 -->
               
         
             </div>

@@ -86,12 +86,10 @@ class EventController extends Controller
       
 
         $auth_user = auth()->user();
-        
         $name = $data['name'];
         $surname = $data['surname'];
         $event = \App\Event::Create($data);
         $event->save();
-        
         $users = User::where([
             ['name','=',$name],
             ['surname','=',$surname]
@@ -99,10 +97,8 @@ class EventController extends Controller
            
         foreach($users->following as $user)
         {
-            
             if($user->id == $auth_user->id)
             {
-                
                 $event_user = \App\event_user::create([
                     'user_id' => $users->id,
                      'event_id' => $event->id,
@@ -114,14 +110,11 @@ class EventController extends Controller
                      'event_id' => $event->id,
                 ]);
                 $event_user->save();
-
                 \Mail::to($users)->send(new Notifikacija($auth_user));
                 return view('success');
             }
         }
-
         return view('fail');
-        
     }
 
     public function remove(\App\Event $event)
